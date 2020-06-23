@@ -1,8 +1,10 @@
 {
-  "name": "geo-cli",
+  "name": "@harrytwright/geo-cli",
   "version": "1.0.0",
   "description": "The command line tool to build the geo database",
-  "main": "index.js",
+  "bin": {
+    "geo": "./bin/geo-cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
