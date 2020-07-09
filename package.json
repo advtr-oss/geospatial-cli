@@ -1,6 +1,6 @@
 {
   "name": "@harrytwright/geo-cli",
-  "version": "1.0.0",
+  "version": "2.0.0-beta.1",
   "description": "The command line tool to build the geo database",
   "bin": {
     "geo": "./bin/geo-cli.js"
