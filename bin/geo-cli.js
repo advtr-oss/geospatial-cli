@@ -1,24 +1,24 @@
 #!/usr/bin/env node
 
 ;(function () {
-  process.title = 'geo';
+  process.title = 'geo'
 
-  const log = require('@harrytwright/logger');
+  const log = require('@harrytwright/logger')
 
   // so we don't get logs when we don't need them
-  log.pause(); // will be unpaused when config is loaded.
+  log.pause() // will be unpaused when config is loaded.
   log.info('it worked if it ends with', 'ok')
 
-  var geo = require('../lib/cli');
-  var config = require('@harrytwright/cli-config');
+  var geo = require('../lib/cli')
+  var config = require('@harrytwright/cli-config')
 
-  let { types, shorthands } = require('../lib/config/options')
+  const { types, shorthands } = require('../lib/config/options')
   const { errorHandler, exit } = require('../lib/utils/error/handler')
 
   log.verbose('cli', process.argv)
 
-  const conf = config.parse(types, shorthands);
-  geo.argv = conf.argv.remain;
+  const conf = config.parse(types, shorthands)
+  geo.argv = conf.argv.remain
 
   if (geo.deref(geo.argv[0])) geo.command = geo.argv.shift()
   else conf.usage = true
@@ -49,11 +49,10 @@
   // this is how to use npm programmatically:
   conf._exit = true
   geo.initialise(conf, function (error) {
-    if (error) return errorHandler(error);
+    if (error) return errorHandler(error)
 
-    geo.commands[geo.command].run(geo.argv, function (err) {
+    geo.commands[geo.command].run(geo.argv, function () {
       errorHandler.apply(this, arguments)
     })
   })
-}());
-
+}())
