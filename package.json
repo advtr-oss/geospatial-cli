@@ -6,7 +6,8 @@
     "geo": "./bin/geo-cli.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postversion": "git push origin --all; git push origin --tags"
   },
   "keywords": [
     "cli"
@@ -14,7 +15,7 @@
   "author": "Harry Wright",
   "license": "MIT",
   "dependencies": {
-    "@harrytwright/cli-config": "^1.1.1",
+    "@harrytwright/cli-config": "^1.2.0",
     "@harrytwright/logger": "^2.0.1",
     "abbrev": "latest",
     "bent": "^7.3.7",
@@ -30,5 +31,8 @@
     "slide": "^1.1.6",
     "unzipper": "^0.10.11",
     "which": "latest"
+  },
+  "devDependencies": {
+    "bats": "^1.1.0"
   }
 }
